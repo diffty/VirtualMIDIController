@@ -31,6 +31,7 @@ struct CallbackFunc {
 
 struct MTFinger {
     int id;
+    Touch firstTouch;
     Touch* currentTouch;
     int nbFrames;
     std::time_t birthTime;

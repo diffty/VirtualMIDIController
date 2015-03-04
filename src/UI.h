@@ -28,8 +28,8 @@ class UI {
     UI(InputManager* inputManager);
     
     void draw();
-    
     void drawSpace(Space* space);
+    void drawNavBar();
 
     void setSpaceManager(SpaceManager* spaceManager);
     

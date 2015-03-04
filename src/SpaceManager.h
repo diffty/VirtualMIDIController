@@ -37,8 +37,13 @@ class SpaceManager {
     int getCurrentSpaceId();
     int getSpaceCount();
     Space* getSpaceAt(ofVec2f pt);
-    
     UI* getParentUI();
+    int getNavBarSize();
+    Rect getNavBarRect();
+    
+    void setNavBarSize(int size);
+    
+    void onNavBarTouch(const MTFinger& finger);
     
     void onNewTouch(int &n);
     void onRemoveTouch(int &n);
@@ -49,4 +54,6 @@ class SpaceManager {
     int currentSpaceId_;
     InputManager* inputManager_;
     vector<int> touchesFirstUse;
+    
+    int navBarSize_;
 };

@@ -26,6 +26,8 @@ void UI::draw() {
         drawSpace(spaceManager_->getCurrentSpace());
     }
     
+    drawNavBar();
+    
     ofSetColor(255,255,255);
     //ofDrawBitmapString("TouchCount: " + ofToString(touch_->getPad()->getTouchCount(), 0), 20, 20);
 }
@@ -38,6 +40,18 @@ void UI::drawSpace(Space* space) {
         
         ofSetColor(ctrl->getColor());
         ofRect(divRect.left, divRect.top, divRect.right-divRect.left, divRect.bottom-divRect.top);
+    }
+}
+
+void UI::drawNavBar() {
+    Space* currentSpace = spaceManager_->getCurrentSpace();
+    for(int i = 0; i < currentSpace->getDivCount(); i++) {
+        Rect divRect = currentSpace->getDivRect(i);
+        
+        Controller* ctrl = currentSpace->getController(i);
+        
+        ofSetColor(0, 255, 0);
+        ofRect(divRect.left+1, 1, divRect.right-divRect.left-1, spaceManager_->getNavBarSize()-1);
     }
 }
 
