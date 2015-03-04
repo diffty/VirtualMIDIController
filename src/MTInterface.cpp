@@ -123,6 +123,7 @@ void MTInterface::refreshFingers() {
         
         if(!getFinger(touchId)) {
             MTFinger newFinger = MTFinger();
+            newFinger.firstTouch = *itT;
             newFinger.currentTouch = &(*itT);
             newFinger.id = itT->id;
             
@@ -147,6 +148,4 @@ void MTInterface::refreshFingers() {
             itF->currentTouch = fingerTouch;
         }
     }
-    
-    std::cout << "Fingers count: " << fingers_.size() << std::endl;
 }

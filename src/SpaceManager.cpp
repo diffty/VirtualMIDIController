@@ -13,6 +13,7 @@
 SpaceManager::SpaceManager(InputManager* inputManager) {
     inputManager_ = inputManager;
     currentSpaceId_ = -1;
+    navBarSize_ = 30;
     
     ofAddListener(inputManager_->getInputInterface()->getPad()->touchAdded, this, &SpaceManager::onNewTouch);
     ofAddListener(inputManager_->getInputInterface()->getPad()->touchRemoved, this, &SpaceManager::onRemoveTouch);
@@ -46,6 +47,36 @@ int SpaceManager::getSpaceCount() {
     return spaces_.size();
 }
 
+int SpaceManager::getNavBarSize() {
+    return navBarSize_;
+}
+
+Rect SpaceManager::getNavBarRect() {
+    Rect navBarRect;
+    
+    navBarRect.top = 0;
+    navBarRect.left = 0;
+    navBarRect.right = ofGetWidth();
+    navBarRect.bottom = navBarSize_;
+    
+    return navBarRect;
+}
+
+void SpaceManager::setNavBarSize(int size) {
+    navBarSize_ = size;
+}
+
+void SpaceManager::onNavBarTouch(const MTFinger& finger) {
+    float navBarTouchDelta = finger.currentTouch->x - finger.firstTouch.x;
+
+    if(navBarTouchDelta >= 0.1) {
+        std::cout << "NEXT SPACE" << std::endl;
+    }
+    else if(navBarTouchDelta <= -0.1) {
+        std::cout << "PREVIOUS SPACE" << std::endl;
+    }
+}
+
 // NE PAS OUBLIER LE &. . . .
 void SpaceManager::onNewTouch(int &n) {
     inputManager_->getInputInterface()->refreshFingers();
@@ -64,7 +95,17 @@ void SpaceManager::onUpdateTouch(int &n) {
     for (vector<MTFinger>::iterator it = fingers->begin(); it != fingers->end(); ++it) {
         Controller* ctrl = getCurrentSpace()->getCtrlAt(ofVec2f(it->currentTouch->x, it->currentTouch->y));
         
-        if(ctrl) {
+        Rect navBarRect = getNavBarRect();
+        ofVec2f ptInScreen = ofVec2f(it->firstTouch.x * ofGetWidth(), it->firstTouch.y * ofGetHeight());
+        
+        if(navBarRect.left <= ptInScreen.x
+           && navBarRect.right >= ptInScreen.x
+           && navBarRect.top <= ptInScreen.y
+           && navBarRect.bottom >= ptInScreen.y) {
+
+            onNavBarTouch(*it);
+        }
+        else if(ctrl) {
             ctrl->receiveInput(&(*it));
         }
     }

@@ -34,6 +34,8 @@
 		951A7B491AA6788100413C45 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 951A7B471AA6788100413C45 /* RtMidi.cpp */; };
 		951A7B4B1AA6795900413C45 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951A7B4A1AA6795900413C45 /* CoreMIDI.framework */; };
 		951A7B4D1AA6795F00413C45 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951A7B4C1AA6795F00413C45 /* CoreAudio.framework */; };
+		951A7B511AA6810700413C45 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 951A7B4E1AA6810700413C45 /* main.cpp */; };
+		951A7B521AA6810700413C45 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 951A7B4F1AA6810700413C45 /* ofApp.cpp */; };
 		9E27E5269849DDA452AAA4BA /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A278BC28919F981A96EC9C24 /* OscTypes.cpp */; };
 		9E6275EEC6C7D43D12DFA56B /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 685C99AEC72339BBE85292F6 /* IpEndpointName.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -53,8 +55,6 @@
 		E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9770E8CC7DD009D7055 /* CoreServices.framework */; };
 		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
 		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
-		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
-		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
@@ -148,12 +148,10 @@
 		951A7B2C1AA6771400413C45 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		951A7B2D1AA6771400413C45 /* InputManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InputManager.cpp; sourceTree = "<group>"; };
 		951A7B2E1AA6771400413C45 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
-		951A7B2F1AA6771400413C45 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		951A7B301AA6771400413C45 /* MIDIInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MIDIInterface.cpp; sourceTree = "<group>"; };
 		951A7B311AA6771400413C45 /* MIDIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIInterface.h; sourceTree = "<group>"; };
 		951A7B321AA6771400413C45 /* MTInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MTInterface.cpp; sourceTree = "<group>"; };
 		951A7B331AA6771400413C45 /* MTInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInterface.h; sourceTree = "<group>"; };
-		951A7B341AA6771400413C45 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		951A7B351AA6771400413C45 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		951A7B361AA6771400413C45 /* Space.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Space.cpp; sourceTree = "<group>"; };
 		951A7B371AA6771400413C45 /* Space.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Space.h; sourceTree = "<group>"; };
@@ -166,6 +164,9 @@
 		951A7B481AA6788100413C45 /* RtMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtMidi.h; path = "../../Libs/rtmidi-2.1.0/RtMidi.h"; sourceTree = "<group>"; };
 		951A7B4A1AA6795900413C45 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		951A7B4C1AA6795F00413C45 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		951A7B4E1AA6810700413C45 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		951A7B4F1AA6810700413C45 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
+		951A7B501AA6810700413C45 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		9864E8807D98FCE8E3A487D2 /* ofxUDPManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUDPManager.h; path = ../of_v0.8.4_osx_release/addons/ofxNetwork/src/ofxUDPManager.h; sourceTree = SOURCE_ROOT; };
 		9E471AEB92A387E6F6D6B6A9 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../of_v0.8.4_osx_release/addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		A278BC28919F981A96EC9C24 /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../of_v0.8.4_osx_release/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
@@ -191,9 +192,6 @@
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		E4B69B5B0A3A1756003C02F2 /* VirtualMIDIControllerDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualMIDIControllerDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -471,29 +469,27 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				951A7B471AA6788100413C45 /* RtMidi.cpp */,
-				951A7B481AA6788100413C45 /* RtMidi.h */,
-				951A7B2A1AA6771400413C45 /* appTypes.h */,
-				951A7B2B1AA6771400413C45 /* Controller.cpp */,
-				951A7B2C1AA6771400413C45 /* Controller.h */,
-				951A7B2D1AA6771400413C45 /* InputManager.cpp */,
-				951A7B2E1AA6771400413C45 /* InputManager.h */,
-				951A7B2F1AA6771400413C45 /* main.cpp */,
-				951A7B301AA6771400413C45 /* MIDIInterface.cpp */,
-				951A7B311AA6771400413C45 /* MIDIInterface.h */,
-				951A7B321AA6771400413C45 /* MTInterface.cpp */,
-				951A7B331AA6771400413C45 /* MTInterface.h */,
-				951A7B341AA6771400413C45 /* ofApp.cpp */,
-				951A7B351AA6771400413C45 /* ofApp.h */,
-				951A7B361AA6771400413C45 /* Space.cpp */,
-				951A7B371AA6771400413C45 /* Space.h */,
+				951A7B4E1AA6810700413C45 /* main.cpp */,
+				951A7B4F1AA6810700413C45 /* ofApp.cpp */,
 				951A7B381AA6771400413C45 /* SpaceManager.cpp */,
-				951A7B391AA6771400413C45 /* SpaceManager.h */,
+				951A7B2D1AA6771400413C45 /* InputManager.cpp */,
+				951A7B321AA6771400413C45 /* MTInterface.cpp */,
+				951A7B301AA6771400413C45 /* MIDIInterface.cpp */,
+				951A7B2B1AA6771400413C45 /* Controller.cpp */,
+				951A7B361AA6771400413C45 /* Space.cpp */,
 				951A7B3A1AA6771400413C45 /* UI.cpp */,
+				951A7B471AA6788100413C45 /* RtMidi.cpp */,
+				951A7B2A1AA6771400413C45 /* appTypes.h */,
+				951A7B501AA6810700413C45 /* ofApp.h */,
+				951A7B391AA6771400413C45 /* SpaceManager.h */,
+				951A7B2E1AA6771400413C45 /* InputManager.h */,
+				951A7B331AA6771400413C45 /* MTInterface.h */,
+				951A7B311AA6771400413C45 /* MIDIInterface.h */,
+				951A7B2C1AA6771400413C45 /* Controller.h */,
+				951A7B351AA6771400413C45 /* ofApp.h */,
+				951A7B371AA6771400413C45 /* Space.h */,
 				951A7B3B1AA6771400413C45 /* UI.h */,
-				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
-				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				951A7B481AA6788100413C45 /* RtMidi.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -618,10 +614,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				C9893715C4B972F7387711FD /* ofxBaseGui.cpp in Sources */,
 				DE407E9EE9F292F730D30FEF /* ofxButton.cpp in Sources */,
+				951A7B521AA6810700413C45 /* ofApp.cpp in Sources */,
+				951A7B511AA6810700413C45 /* main.cpp in Sources */,
 				951A7B3D1AA6771400413C45 /* InputManager.cpp in Sources */,
 				1E5FEDF788EB25A15DC2460C /* ofxGuiGroup.cpp in Sources */,
 				66810C01C7565033ADB09359 /* ofxLabel.cpp in Sources */,
