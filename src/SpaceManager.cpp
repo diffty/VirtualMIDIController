@@ -66,14 +66,21 @@ void SpaceManager::setNavBarSize(int size) {
     navBarSize_ = size;
 }
 
+void SpaceManager::setCurrentSpace(int spaceId) {
+    if(0 <= spaceId && spaceId < getSpaceCount()) {
+        std::cout << "Switching to space " << spaceId << std::endl;
+        currentSpaceId_ = spaceId;
+    }
+}
+
 void SpaceManager::onNavBarTouch(const MTFinger& finger) {
     float navBarTouchDelta = finger.currentTouch->x - finger.firstTouch.x;
 
     if(navBarTouchDelta >= 0.1) {
-        std::cout << "NEXT SPACE" << std::endl;
+        setCurrentSpace(currentSpaceId_ + 1);
     }
-    else if(navBarTouchDelta <= -0.1) {
-        std::cout << "PREVIOUS SPACE" << std::endl;
+    else if(navBarTouchDelta <= -0.1 && currentSpaceId_ - 1 >= 0) {
+        setCurrentSpace(currentSpaceId_ - 1);
     }
 }
 
@@ -93,7 +100,7 @@ void SpaceManager::onUpdateTouch(int &n) {
     vector<MTFinger>* fingers = inputManager_->getInputInterface()->getFingers();
 
     for (vector<MTFinger>::iterator it = fingers->begin(); it != fingers->end(); ++it) {
-        Controller* ctrl = getCurrentSpace()->getCtrlAt(ofVec2f(it->currentTouch->x, it->currentTouch->y));
+        Controller* ctrl = getCurrentSpace()->getCtrlAt(ofVec2f(it->firstTouch.x, it->firstTouch.y));
         
         Rect navBarRect = getNavBarRect();
         ofVec2f ptInScreen = ofVec2f(it->firstTouch.x * ofGetWidth(), it->firstTouch.y * ofGetHeight());

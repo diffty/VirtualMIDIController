@@ -42,6 +42,7 @@ class SpaceManager {
     Rect getNavBarRect();
     
     void setNavBarSize(int size);
+    void setCurrentSpace(int spaceId);
     
     void onNavBarTouch(const MTFinger& finger);
     

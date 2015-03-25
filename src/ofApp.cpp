@@ -10,6 +10,7 @@ ofApp::ofApp() {
     spaceManager_ = new SpaceManager(inputManager_);
     
     spaceManager_->addSpace(new Space(4, spaceManager_));
+    spaceManager_->addSpace(new Space(2, spaceManager_));
     
     Space* curSpace = spaceManager_->getSpace(0);
     
@@ -25,6 +26,11 @@ ofApp::ofApp() {
     curSpace->addController(Controller(CTRL_TAP,    curSpace, midiInterface_, c1_play));
     curSpace->addController(Controller(CTRL_TAP,    curSpace, midiInterface_, c2_play));
     curSpace->addController(Controller(CTRL_SLIDER, curSpace, midiInterface_, c2_high));
+    
+    curSpace = spaceManager_->getSpace(1);
+
+    curSpace->addController(Controller(CTRL_SLIDER, curSpace, midiInterface_, c1_low));
+    curSpace->addController(Controller(CTRL_SLIDER, curSpace, midiInterface_, c2_low));
     
     ui_->setSpaceManager(spaceManager_);
 }
